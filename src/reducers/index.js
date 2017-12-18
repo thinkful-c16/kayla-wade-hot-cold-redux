@@ -1,4 +1,4 @@
-import {RESTART_GAME, MAKE_GUESS} from '../actions';
+import {RESTART_GAME, MAKE_GUESS, SET_AURALSTATUS} from '../actions';
 
 const initialState = {
     guesses: [],
@@ -39,8 +39,18 @@ export const gameReducer = (state=initialState, action) => {
             feedback: feedback
         })
     }
-    // else if(action.type === GENERATE_FEEDBACK) {
-    //     return Object.assign({}, state)
-    // }
+    else if (action.type === SET_AURALSTATUS) {
+        const pluralize = state.guesses.length !== 1;
+
+        let  auralStatus = `Here's the status of the game right now: ${state.feedback} You've made ${state.guesses.length} ${pluralize ? 'guesses' : 'guess'}.`;
+
+        if (state.guesses.length > 0) {
+            auralStatus+= ` ${pluralize ? 'In order of most- to least-recent, they are' : 'It was'}: ${state.guesses.reverse().join(', ')}`;
+        }
+
+        return Object.assign({}, state, {
+            auralStatus: auralStatus
+        })
+    }
     return(state);
 }

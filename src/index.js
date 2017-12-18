@@ -1,5 +1,5 @@
 import store from './store';
-import {restartGame, makeGuess} from './actions';
+import {restartGame, makeGuess, setAuralStatus} from './actions';
 
 console.log(store.getState());
 
@@ -24,6 +24,10 @@ store.dispatch(makeGuess(13));
 console.log(store.getState());
 
 store.dispatch(makeGuess(93));
+
+console.log(store.getState());
+
+store.dispatch(setAuralStatus());
 
 console.log(store.getState());
 

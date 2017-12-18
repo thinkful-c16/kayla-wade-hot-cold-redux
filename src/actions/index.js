@@ -15,6 +15,12 @@ export const makeGuess = (guess) => ({
     guess: guess
 })
 
+export const SET_AURALSTATUS = 'SET_AURALSTATUS'
+
+export const setAuralStatus = () => ({
+    type: SET_AURALSTATUS
+})
+
 // export const GENERATE_FEEDBACK = 'GENERATE_FEEDBACK'
 
 // export const generateFeedback = (guess) => ({
