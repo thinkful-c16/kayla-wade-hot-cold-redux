@@ -1,9 +1,29 @@
 import store from './store';
-import {RESTART_GAME, restartGame} from './actions';
+import {restartGame, makeGuess} from './actions';
 
 console.log(store.getState());
 
 store.dispatch(restartGame());
+
+console.log(store.getState());
+
+store.dispatch(makeGuess(3));
+
+console.log(store.getState());
+
+store.dispatch(makeGuess(73));
+
+console.log(store.getState());
+
+store.dispatch(makeGuess(33));
+
+console.log(store.getState());
+
+store.dispatch(makeGuess(13));
+
+console.log(store.getState());
+
+store.dispatch(makeGuess(93));
 
 console.log(store.getState());
 
