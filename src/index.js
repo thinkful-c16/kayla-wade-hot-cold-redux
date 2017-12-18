@@ -1,12 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import store from './store';
+import {RESTART_GAME, restartGame} from './actions';
 
-import './reset.css';
-import './index.css';
+console.log(store.getState());
 
-import Game from './components/game';
+store.dispatch(restartGame());
 
-ReactDOM.render(
-  <Game />,
-  document.getElementById('root')
-);
+console.log(store.getState());
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+
+// import './reset.css';
+// import './index.css';
+
+// import Game from './components/game';
+
+
+
+// ReactDOM.render(
+//   <Game />,
+//   document.getElementById('root')
+// );
