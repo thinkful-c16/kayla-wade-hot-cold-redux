@@ -10,11 +10,6 @@ import { makeGuess } from '../actions';
 export class GuessForm extends React.Component {
   onSubmit(event) {
     event.preventDefault();
-
-    // if (this.props.onMakeGuess) {
-    //   const value = this.input.value;
-    //   this.props.onMakeGuess(value);
-    // }
     store.dispatch(makeGuess(parseInt(this.input.value, 10)));
     this.input.value = '';
     this.input.focus();
