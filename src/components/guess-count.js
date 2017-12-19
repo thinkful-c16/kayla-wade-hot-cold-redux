@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './guess-count.css';
+//accesses guess count via length of guesses array
 
 export default function GuessCount(props) {
     const isPlural = props.guessCount !== 1;
